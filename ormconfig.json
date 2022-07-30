@@ -3,9 +3,9 @@
   "host": "localhost",
   "port": 5432,
   "username": "postgres",
-  "password": "postgres",
+  "password": "postgres1",
   "database": "apivendas",
-  "migrations": [".src/shared/typeorm/migrations/*. ts"],
+  "migrations": ["./src/shared/typeorm/migrations/*.ts"],
   "cli": {
     "migrationsDir": "./src/shared/typeorm/migrations"
   }
