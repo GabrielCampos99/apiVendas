@@ -11,7 +11,7 @@ class GetProductService {
   public async execute({ id }: IRequest): Promise<Product | undefined> {
     const productsRepository = getCustomRepository(ProductRepository);
 
-    const product = productsRepository.findOne({
+    const product = await productsRepository.findOne({
       where: { id },
     });
 
