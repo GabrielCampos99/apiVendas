@@ -4,23 +4,21 @@ import Product from '../typeorm/entities/Products';
 import { ProductRepository } from '../typeorm/repositories/ProductsRepository';
 
 interface IRequest {
-  name: string;
-  price: number;
-  quantity: number;
+  id: string;
 }
 
-class ListProductService {
-  public async execute({
-    name,
-    price,
-    quantity,
-  }: IRequest): Promise<Product[]> {
+class GetProductService {
+  public async execute({ id }: IRequest): Promise<Product> {
     const productsRepository = getCustomRepository(ProductRepository);
 
-    const products = await productsRepository.find();
+    const product = await productsRepository.findOne(id);
 
-    return products;
+    if (!product) {
+      throw new AppError('Product not found.');
+    }
+
+    return product;
   }
 }
 
-export default ListProductService;
+export default GetProductService;
