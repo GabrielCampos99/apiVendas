@@ -14,7 +14,6 @@ interface IRequest {
 class UpdateUserAvatarService {
   public async execute({ user_id, avatarFilename }: IRequest): Promise<User> {
     const usersRepository = getCustomRepository(UsersRepository);
-
     const user = await usersRepository.findById(user_id);
 
     if (!user) {
@@ -31,6 +30,8 @@ class UpdateUserAvatarService {
     }
 
     user.avatar = avatarFilename;
+
+    console.log(avatarFilename);
 
     await usersRepository.save(user);
 
