@@ -44,7 +44,7 @@ export class CreateUserTokens1662836294812 implements MigrationInterface {
             onUpdate: 'CASCADE',
           },
         ],
-      }),
+      })
     );
   }
 

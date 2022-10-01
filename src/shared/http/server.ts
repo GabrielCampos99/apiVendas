@@ -30,7 +30,7 @@ app.use(
       status: 'error',
       message: 'Internal server error',
     });
-  },
+  }
 );
 
 app.listen(3333, () => {

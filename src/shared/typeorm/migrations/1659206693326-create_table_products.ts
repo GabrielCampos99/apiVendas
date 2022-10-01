@@ -38,7 +38,7 @@ export class createTableProducts1659206693326 implements MigrationInterface {
             default: 'now()',
           },
         ],
-      }),
+      })
     );
   }
 

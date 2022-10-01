@@ -26,7 +26,7 @@ class SendForgotPasswordEmailService {
       __dirname,
       '..',
       'views',
-      'forgot_password.hbs',
+      'forgot_password.hbs'
     );
 
     await EtherealMail.sendMail({
